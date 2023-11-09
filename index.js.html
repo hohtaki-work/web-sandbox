@@ -6,13 +6,22 @@
     <!-- import JS from CDN 
     <script src="https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.umd.js"></script>
     -->
-    <!-- import JS from local package -->
+    <!-- import JS from local package
     <script src="js/zephr-browser.umd.js"></script>
+    -->
+    <!-- Run zephrBrowser on DOMContentLoaded event
     <script>
         let baseUrl = 'https://hohtaki-web-sandbox.preview.zephr.com';
         document.addEventListener('DOMContentLoaded', (event) => {
            zephrBrowser.run(baseUrl);
         });
+    </script>
+    -->
+
+    <!-- Import and run zephrBrowser as module -->
+    <script type="module">
+        import * as zephrBrowser from 'https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.modern.js';
+        zephrBrowser.run();
     </script>
 </head>
 
