@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@zephr/browser": "^1.6.2"
+  }
+}
