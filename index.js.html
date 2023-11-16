@@ -6,9 +6,11 @@
     <!-- import JS from CDN 
     <script src="https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.umd.js"></script>
     -->
+
     <!-- import JS from local package
     <script src="js/zephr-browser.umd.js"></script>
     -->
+
     <!-- Run zephrBrowser on DOMContentLoaded event
     <script>
         let baseUrl = 'https://hohtaki-web-sandbox.preview.zephr.com';
@@ -18,13 +20,22 @@
     </script>
     -->
 
-    <!-- Import and run zephrBrowser as module -->
+    <!-- use explicit cdnAPI endpoint
+        Prerequisite: Configure subdomain and CNAME
     <script type="module">
         import * as zephrBrowser from 'https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.modern.js';
         let baseUrl = 'https://hohtaki-web-sandbox.preview.zephr.com';
-        //zephrBrowser.run(baseUrl);
         zephrBrowser.run({"cdnApi": baseUrl});
     </script>
+    -->
+    
+    <!-- use reverse proxy
+        Prerequisite: Set up reverse proxy for /blaize and /zephr path -->
+    <script type="module">
+        import * as zephrBrowser from 'https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.modern.js';
+        zephrBrowser.run();
+    </script>
+
 </head>
 
 
