@@ -21,7 +21,9 @@
     <!-- Import and run zephrBrowser as module -->
     <script type="module">
         import * as zephrBrowser from 'https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.modern.js';
-        zephrBrowser.run();
+        let baseUrl = 'https://hohtaki-web-sandbox.preview.zephr.com';
+        //zephrBrowser.run(baseUrl);
+        zephrBrowser.run({"cdnApi": baseUrl});
     </script>
 </head>
 
