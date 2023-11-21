@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <!-- use explicit cdnAPI endpoint
+        Prerequisite: Configure subdomain and CNAME -->
+    <script type="module">
+        import * as zephrBrowser from 'https://assets.zephr.com/zephr-browser/1.6.2/zephr-browser.modern.js';
+
+        let apiResponse = await fetch("http://localhost:3000/subscriptions/A-S00000218");
+        let json = await apiResponse.json();
+
+        let baseUrl = 'https://hohtaki-web-sandbox.preview.zephr.com';
+        zephrBrowser.run({
+            "cdnApi": baseUrl,
+            "customData": {
+                "foo": json.accountNumber
+            }
+        });
+    </script>
+    
+</head>
+
+
+<body>
+    <h1>Zephr Web Sandbox for JS deployment</h1>
+
+    <div id="foo">
+        This content will be replaced by Zephr JS
+    </div>
+</body>
+
+</html>
